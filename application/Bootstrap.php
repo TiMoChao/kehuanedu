@@ -3,6 +3,8 @@
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
     protected function _initView(){
+        ini_set('date.timezone','Asia/Shanghai');//设置时区
+
         $view = new Zend_View();//实例化两个资源
         $view->doctype('XHTML1_STRICT');
         $view->headTitle('可幻教育');

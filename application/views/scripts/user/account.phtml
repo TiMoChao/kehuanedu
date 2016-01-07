@@ -1,0 +1,14 @@
+<h3>用户信息</h3>
+<?php
+   echo "用户名：".$this->user->username;
+   echo "</br>电子邮箱：".$this->user->email;
+   echo "</br>注册日期：".date('Y-m-d',$this->user->time_reg);
+
+   if($this->identity){
+       if($this->user->id == $this->identity->id){
+           echo "<hr/>";
+           echo "<a href='/user/update/id/".$this->user->id."'>更改个人信息</a> | ";
+           echo "<a href='/user/change-password/id/".$this->user->id."'>更改密码</a>";
+       }
+   }
+?>

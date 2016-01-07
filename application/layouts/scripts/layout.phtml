@@ -1,4 +1,8 @@
-<?php echo $this->docType();?>
+<?php
+echo $this->docType();
+$this->layout()->userPanel = $this->action('panel','user');
+?>
+
 <html>
 <head>
     <meta http-equiv="CONTENT-TYPE" content="text/html; charset=utf-8" />
@@ -9,7 +13,10 @@
 </head>
 <body>
 <div id = "wrap">
-    <?php echo $this->partial('header.phtml');?>
+    <?php
+    echo $this->layout()->userPanel;
+    echo $this->partial('header.phtml');
+    ?>
     <div id = "main">
         <div id = "sidebar"></div>
 
