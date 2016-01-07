@@ -1,0 +1,11 @@
+<?php
+   echo "<h2>".$this->page->title."</h2>";
+echo "<span>发表于".$this->page->createtime."</span>";
+echo "<span>更新于".$this->page->updatetime."</span>";
+echo "<hr>";
+echo $this->page->body;
+
+echo "<h3>其他新闻</h3>";
+if($this->pages){
+    echo $this->partialLoop('partials/row_pages.phtml',$this->pages);
+}

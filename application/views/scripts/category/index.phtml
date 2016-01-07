@@ -1,0 +1,18 @@
+<?php
+if($this->categorise){
+    foreach ($this->categorise as $category) {
+        echo "<dl class='listCatetory'>";
+        $num = substr_count($category->path,',');
+        if($num > 0){
+            echo "<dt>";
+            for($i = 1 ;$i <= $num; $i++){
+                echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+            echo "|--".$category->name."</dt>";
+        }
+        else{
+            echo "<dt>".$category->name."</dt>";
+        }
+        echo "</dl>";
+    }
+}
